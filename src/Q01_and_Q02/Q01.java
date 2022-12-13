@@ -19,7 +19,7 @@ public class Q01 {
         PrintWriter pw = null;
         try{
             //check if the file already exist or not, then create it
-            pw = new PrintWriter(new FileWriter("src/users.txt",false));
+            pw = new PrintWriter(new FileWriter("src/users.txt",true));
             //Write a string to the file
             pw.println("Name: "+name+"\nAddress: "+address+"\nAges: "+age);
             System.out.println("Successfully wrote to the file");
@@ -33,7 +33,8 @@ public class Q01 {
         //Close the file
         finally {
             if(pw != null)
-               pw.close();
+               pw.flush();// this will help you safe your stuffs in case a crash happened
+            pw.close();
         }
     }
 }
