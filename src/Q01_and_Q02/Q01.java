@@ -19,9 +19,9 @@ public class Q01 {
         PrintWriter pw = null;
         try{
             //check if the file already exist or not, then create it
-            pw = new PrintWriter(new FileWriter("src/users.txt",true));
+            pw = new PrintWriter(new FileWriter("src/Q01_and_Q02/users.txt",true));
             //Write a string to the file
-            pw.println("Name: "+name+"\nAddress: "+address+"\nAges: "+age);
+            pw.printf("%s, %s, %d",name,address,age);
             System.out.println("Successfully wrote to the file");
         }
         //will print out message if the block of code above running into error
